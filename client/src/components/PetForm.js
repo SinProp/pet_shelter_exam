@@ -42,13 +42,14 @@ const PetForm = () => {
     
     // Form setup or front end formatting
     <div className="container text-center">
-    <h1 className="">Submit a Pet Record: </h1> 
+    <h1 className="">Pet Shelter </h1> 
+    <h3>Know a pet needing a home?</h3>
     <hr />
-    <h2 className=""><Link to="/">Back to Shelter List
+    <h2 className=""><Link to="/">Back to Home
         </Link></h2>        
 
     
-    <form onSubmit={handleSubmit}> 
+    <form className="border border-dark " onSubmit={handleSubmit}> 
         <div className="form-group text-center">Pet Name:{" "} 
         <input 
         type="text" 

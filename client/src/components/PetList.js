@@ -29,16 +29,17 @@ const deleteFilter = (idFromBelow) => {
 }
 
     return (
-    <div className="container">
+    <div className="container text-center">
         
 
-        <h1 className="text-center">Sheltered Pets: </h1> 
+        <h1 >Pet Shelter: </h1> 
+        <h3>These Pets are looking for a good home</h3>
         <hr />
         <h2 className="text-center"><Link to="/new-pet">Add a pet to the shelter
         </Link>
         </h2>        
 
-        <table className="table table-dark">
+        <table className="table table-dark table-striped">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -52,8 +53,8 @@ const deleteFilter = (idFromBelow) => {
                     <tr key={pet._id}>
                                 <td>{pet.petName}</td>
                                 <td>{pet.petType}</td>
-                                <td><button className="button-margin" onClick={()=>navigate(`/edit/${pet._id}`)}>Edit</button>
-                                    <button className="button-margin" onClick={()=>deleteFilter(pet._id)}>Delete</button>
+                                <td><button className="button-margin" onClick={()=>navigate(`/pet/${pet._id}`)}>Details</button>
+                                <button className="button-margin" onClick={()=>navigate(`/edit/${pet._id}`)}>Edit</button>
                                 </td>
                                 
                             </tr>

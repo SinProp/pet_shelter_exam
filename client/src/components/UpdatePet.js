@@ -28,10 +28,10 @@ const UpdatePet = (props) => {
             navigate("/");
             })
         .catch((err) => console.log(err));
-    };
+    
 };
-
     const { _id } = props;    
+
     useEffect(() => {
         axios
         .get(`http://localhost:8000/api/pets/${_id}`)
@@ -52,40 +52,44 @@ const UpdatePet = (props) => {
     console.log(_id);
     return (
     <div className="container text-center">
-        <h1>Update Pet Portal</h1>
-        <form onSubmit={handleSubmit}> 
-        <h1>Update {petName}'s Record: </h1> 
-        <div className="form-div">petName:{" "} 
+        <h1>Pet Shelter</h1>
+        <h1>Edit {petName}'s Record: </h1> 
+        <hr/>
+        <h2 className=""><Link to="/">Back to Home
+        </Link></h2>        
+
+        <form className="border border-dark" onSubmit={handleSubmit}> 
+        <div className="form-group">Pet Name:{" "} 
         <input type="text" 
         onChange={(e) => setPetName(e.target.value)}
         value={petName}
         />
         </div>
-        <div className="form-div">Pet Type:{" "} 
+        <div className="form-group">Pet Type:{" "} 
         <input type="text" 
         onChange={(e) => setPetType(e.target.value)}
         value={petType}
         />
         </div>
-        <div className="form-div">Pet Description:{" "} 
+        <div className="form-group">Pet Description:{" "} 
         <input type="text" 
         onChange={(e) => setPetDescription(e.target.value)}
         value={petDescription}
         />
         </div>
-        <div className="form-div">Skill One:{" "} 
+        <div className="form-group">Skill One:{" "} 
         <input type="text" 
         onChange={(e) => setSkillOne(e.target.value)}
         value={skillOne}
         />
         </div>
-        <div className="form-div">Skill Two:{" "} 
+        <div className="form-group">Skill Two:{" "} 
         <input type="text" 
         onChange={(e) => setSkillTwo(e.target.value)}
         value={skillTwo}
         />
         </div>
-        <div className="form-div">Skill Three:{" "} 
+        <div className="form-group">Skill Three:{" "} 
         <input type="text" 
         onChange={(e) => setSkillThree(e.target.value)}
         value={skillThree}
@@ -97,6 +101,6 @@ const UpdatePet = (props) => {
 
     </div>
     );
-
+    };
 
 export default UpdatePet;

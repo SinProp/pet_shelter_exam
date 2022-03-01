@@ -1,4 +1,4 @@
-import { navigate } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import axios from "axios";
 import React, { useState, useEffect} from "react";
 
@@ -27,12 +27,20 @@ const ShowPet = (props) => {
 
     console.log(_id);
     return (
-    <div>
-        <h1>Pet Record: {petInfo.petName}</h1>
+    <div className="container text-center">
+        <div className="border border-dark"></div>
+        <h1>Pet Shelter</h1>
+        <h3>Details about: {petInfo.petName}</h3>
+        <h2 className=""><Link to="/">Back to Home
+        </Link></h2>        
         <hr />
-        <p>Pet Type: ${petInfo.petType}</p>
+        <p>Pet Type: {petInfo.petType}</p>
         <p>Description: {petInfo.petDescription}</p>
-        <button onClick={deleteHandler}>Delete</button>
+        <p>Skill One: {petInfo.petSkillOne}</p>
+        <p>Skill Two: {petInfo.petSkillTwo}</p>
+        <p>Skill Three: {petInfo.petSkillThree}</p>
+        <hr />
+        <button className="btn btn-danger" onClick={deleteHandler}>Adopt {petInfo.petName}</button>
 
         </div>
     );
