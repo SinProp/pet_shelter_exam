@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { Router } from "@reach/router";
+import ShowPet from './components/ShowPet';
+import UpdatePet from './components/UpdatePet';
+import PetList from './components/PetList';
+import PetForm from './components/PetForm';
 
+
+// Rendering components through Main.Js in the views folder and reach router
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <PetList path="/" />
+        <PetForm path="/new-pet" />
+        <ShowPet path="/pet/:_id" />
+        <UpdatePet path="/pet/edit/:_id" />
+      </Router>
     </div>
   );
 }
